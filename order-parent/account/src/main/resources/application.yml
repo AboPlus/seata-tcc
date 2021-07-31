@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: account
+  datasource:
+    url: jdbc:mysql://localhost/seata_account?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  # 事务组设置
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: order_tx_group
+server:
+  port: 8081
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true # 注册的ip地址，而不是主机名
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.abo.account.entity
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com:
+      abo:
+        account:
+          mapper: debug

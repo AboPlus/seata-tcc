@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    inetutils:
+      preferred-networks:   # 选择网卡
+        - 192\.168\.12\..+

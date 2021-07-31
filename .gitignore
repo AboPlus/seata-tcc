@@ -1,0 +1,3 @@
+# Project exclude paths
+/order-parent/account/target/
+/order-parent/order/target/
